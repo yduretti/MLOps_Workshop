@@ -12,6 +12,7 @@ stages:
     displayName: "Provision Dev resources"
     pool:
       name: 'Azure Pipelines'
+      demands: []
     timeoutInMinutes: 0
     steps:
     - script: |
