@@ -14,6 +14,14 @@ stages:
       name: 'Azure Pipelines'
     timeoutInMinutes: 0
     steps:
+    - script: |
+        echo "Deploying with:"
+        echo "Resource Group: $(RESOURCE_GROUP)"
+        echo "Location: $(LOCATION)"
+        echo "Base Name: $(BASE_NAME)"
+        echo "Workspace: $(WORKSPACE_NAME)"
+      displayName: 'Print debug vars'
+    
     - task: AzureResourceGroupDeployment@2
       inputs:
         azureSubscription: '$(AZURE_RM_SVC_CONNECTION)'
